@@ -2,7 +2,12 @@ import SwiftUI
 
 struct ChooserGameScreen: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationLink(
+            destination: InfoGameScreen(),
+            label: {
+                Text("Chooser Games Screen")
+            }
+        )
     }
 }
 
