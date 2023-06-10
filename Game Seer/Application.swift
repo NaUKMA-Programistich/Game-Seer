@@ -4,9 +4,7 @@ import SwiftUI
 struct Application: App {
     var body: some Scene {
         WindowGroup {
-            NavigationView {
-                ChooserGameScreen()
-            }
+            ChooserGameScreen()
         }
     }
 }

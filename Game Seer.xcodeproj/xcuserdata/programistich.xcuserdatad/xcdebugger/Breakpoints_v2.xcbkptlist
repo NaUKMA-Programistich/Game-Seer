@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "4393C9F6-ED6E-4323-9A16-FF6186382138"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4F4DAFED-48EB-47E4-B71E-A702DBF372D1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Game Seer/Models/GameDto.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "8"
+            endingLineNumber = "8"
+            landmarkName = "init?(from:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AF065BC9-14C2-493B-8F90-DCD6C5D02091"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Game Seer/Models/GameDto.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "9"
+            endingLineNumber = "9"
+            landmarkName = "init?(from:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4C09B2F8-5FA7-425F-ACD5-AB78F7DA7F41"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Game Seer/Models/GameDto.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "init?(from:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "961B55E4-D487-49D3-BFE3-F067F92D9963"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Game Seer/Services/GamesService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "processImage(image:onResult:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "961B55E4-D487-49D3-BFE3-F067F92D9963 - 19a23fe51efa0195"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Game_Seer.GamesService.processImage(image: Swift.Optional&lt;Foundation.Data&gt;, onResult: (Swift.Array&lt;Game_Seer.Game&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Game Seer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/programistich/Projects/Study/summer-3/ML:AR/Game-Seer/Game%20Seer/Services/GamesService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "961B55E4-D487-49D3-BFE3-F067F92D9963 - 19a23fe51efa0195"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Game_Seer.GamesService.processImage(image: Swift.Optional&lt;Foundation.Data&gt;, onResult: (Swift.Array&lt;Game_Seer.Game&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Game Seer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/programistich/Projects/Study/summer-3/ML:AR/Game-Seer/Game%20Seer/Services/GamesService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "140">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0A3B78A8-AD9F-474D-ADD3-6AAC83442B4D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Game Seer/Services/GamesService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "processImage(image:onResult:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0A3B78A8-AD9F-474D-ADD3-6AAC83442B4D - 19a23fe51efa0111"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Game_Seer.GamesService.processImage(image: Swift.Optional&lt;Foundation.Data&gt;, onResult: (Swift.Array&lt;Game_Seer.Game&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Game Seer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/programistich/Projects/Study/summer-3/ML:AR/Game-Seer/Game%20Seer/Services/GamesService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "268">
+               </Location>
+               <Location
+                  uuid = "0A3B78A8-AD9F-474D-ADD3-6AAC83442B4D - fa9229425c8ec452"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Dictionary&lt;Swift.String, Swift.Float&gt;) -&gt; () in Game_Seer.GamesService.processImage(image: Swift.Optional&lt;Foundation.Data&gt;, onResult: (Swift.Array&lt;Game_Seer.Game&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Game Seer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/programistich/Projects/Study/summer-3/ML:AR/Game-Seer/Game%20Seer/Services/GamesService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "300">
+               </Location>
+               <Location
+                  uuid = "0A3B78A8-AD9F-474D-ADD3-6AAC83442B4D - fa9229425c8ec452"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Dictionary&lt;Swift.String, Swift.Float&gt;) -&gt; () in Game_Seer.GamesService.processImage(image: Swift.Optional&lt;Foundation.Data&gt;, onResult: (Swift.Array&lt;Game_Seer.Game&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Game Seer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/programistich/Projects/Study/summer-3/ML:AR/Game-Seer/Game%20Seer/Services/GamesService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "356">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0772CB5E-97C1-4A65-9699-EB12CB8AC5BD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Game Seer/Services/GamesService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "processImage(image:onResult:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0772CB5E-97C1-4A65-9699-EB12CB8AC5BD - 19a23fe51efa0195"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Game_Seer.GamesService.processImage(image: Swift.Optional&lt;Foundation.Data&gt;, onResult: (Swift.Array&lt;Game_Seer.Game&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Game Seer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/programistich/Projects/Study/summer-3/ML:AR/Game-Seer/Game%20Seer/Services/GamesService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "0772CB5E-97C1-4A65-9699-EB12CB8AC5BD - 19a23fe51efa0195"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Game_Seer.GamesService.processImage(image: Swift.Optional&lt;Foundation.Data&gt;, onResult: (Swift.Array&lt;Game_Seer.Game&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Game Seer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/programistich/Projects/Study/summer-3/ML:AR/Game-Seer/Game%20Seer/Services/GamesService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "140">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FF4E9D18-F8CB-43F4-B90E-07FAD2043C6E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Game Seer/Services/GamesService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "processImage(image:onResult:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "FF4E9D18-F8CB-43F4-B90E-07FAD2043C6E - 19a23fe51efa01b2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Game_Seer.GamesService.processImage(image: Swift.Optional&lt;Foundation.Data&gt;, onResult: (Swift.Array&lt;Game_Seer.Game&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Game Seer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/programistich/Projects/Study/summer-3/ML:AR/Game-Seer/Game%20Seer/Services/GamesService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "172">
+               </Location>
+               <Location
+                  uuid = "FF4E9D18-F8CB-43F4-B90E-07FAD2043C6E - 19a23fe51efa01b2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Game_Seer.GamesService.processImage(image: Swift.Optional&lt;Foundation.Data&gt;, onResult: (Swift.Array&lt;Game_Seer.Game&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Game Seer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/programistich/Projects/Study/summer-3/ML:AR/Game-Seer/Game%20Seer/Services/GamesService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "244">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2A6845B1-772F-412F-8544-ABB411E23BD5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Game Seer/Services/GamesService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "processImage(image:onResult:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2A6845B1-772F-412F-8544-ABB411E23BD5 - fa9229425c8ec452"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Dictionary&lt;Swift.String, Swift.Float&gt;) -&gt; () in Game_Seer.GamesService.processImage(image: Swift.Optional&lt;Foundation.Data&gt;, onResult: (Swift.Array&lt;Game_Seer.Game&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Game Seer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/programistich/Projects/Study/summer-3/ML:AR/Game-Seer/Game%20Seer/Services/GamesService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "300">
+               </Location>
+               <Location
+                  uuid = "2A6845B1-772F-412F-8544-ABB411E23BD5 - 91581fee69dcb745"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 ((key: Swift.String, value: Swift.Float), (key: Swift.String, value: Swift.Float)) -&gt; Swift.Bool in closure #1 (Swift.Dictionary&lt;Swift.String, Swift.Float&gt;) -&gt; () in Game_Seer.GamesService.processImage(image: Swift.Optional&lt;Foundation.Data&gt;, onResult: (Swift.Array&lt;Game_Seer.Game&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Game Seer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/programistich/Projects/Study/summer-3/ML:AR/Game-Seer/Game%20Seer/Services/GamesService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "76">
+               </Location>
+               <Location
+                  uuid = "2A6845B1-772F-412F-8544-ABB411E23BD5 - fa9229425c8ec452"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Dictionary&lt;Swift.String, Swift.Float&gt;) -&gt; () in Game_Seer.GamesService.processImage(image: Swift.Optional&lt;Foundation.Data&gt;, onResult: (Swift.Array&lt;Game_Seer.Game&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Game Seer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/programistich/Projects/Study/summer-3/ML:AR/Game-Seer/Game%20Seer/Services/GamesService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "356">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

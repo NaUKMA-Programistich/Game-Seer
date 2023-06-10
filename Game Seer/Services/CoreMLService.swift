@@ -4,7 +4,8 @@ import CoreML
 import Vision
 
 
-class CoreMLClass {
+class CoreMLService {
+    static let shared: CoreMLService = .init()
     private let classifier: VNCoreMLModel
 
     init() {
@@ -19,7 +20,7 @@ class CoreMLClass {
         classifier = localClassifier
     }
 
-    func process(image: UIImage, onResult: @escaping ([String:Float]) -> Void) {
+    func process(image: UIImage, count: Int = 5, onResult: @escaping ([String:Float]) -> Void) {
         let visionRequest = VNCoreMLRequest(model: classifier) { (request, error) in
             guard let result = request.results as? [VNClassificationObservation] else {
                 onResult([:])
@@ -38,8 +39,13 @@ class CoreMLClass {
         }
         let visionHandler = VNImageRequestHandler(cgImage: cgImage)
 
-        guard let result = try? visionHandler.perform([visionRequest]) else {
-            fatalError("Cant process handler")
+        do {
+            #if targetEnvironment(simulator)
+            visionRequest.usesCPUOnly = true
+            #endif
+            try visionHandler.perform([visionRequest])
+        } catch let error {
+            print(error.localizedDescription)
         }
     }
 }
