@@ -21,9 +21,13 @@ class GamesService {
             processML(data: result) { gameDto in
                 let game = Game(
                     name: gameDto.name,
+                    id: gameDto.id,
                     description: gameDto.description,
-                    percentage: String(result.value)
+                    percentage: String(result.value),
+                    platforms: gameDto.platforms,
+                    languages: gameDto.languages.withoutTags
                 )
+                print(game)
                 onResult(game)
             }
         }
@@ -34,8 +38,11 @@ class GamesService {
         getGameDetails(gameId: String(gameID)) { gameDTO in
             let game = Game(
                 name: gameDTO.name,
+                id: gameDTO.id,
                 description: gameDTO.shortDescription,
-                percentage: String(data.value)
+                percentage: String(data.value),
+                platforms: gameDTO.platforms,
+                languages: gameDTO.languages.withoutTags
             )
             onResult(game)
         }
@@ -44,7 +51,7 @@ class GamesService {
 
 
     private func getGameDetails(gameId: String, onResult: @escaping (GameDto) -> Void) {
-        guard let url = URL(string: STEAM_URL + gameId) else {
+        guard let url = URL(string: STEAM_URL + gameId + "&l=english") else {
             print("Bad url")
             return
         }
@@ -73,4 +80,13 @@ class GamesService {
 
 extension String: LocalizedError {
     public var errorDescription: String? { return self }
+}
+
+extension String{
+    public var withoutTags: String{
+        let pattern = "<[^>]+>"
+        var str = self.filter{$0 != "*"}.replacingOccurrences(of: pattern, with: "", options: .regularExpression)
+        str = str.replacingOccurrences(of: "languages with full audio support", with: "")
+        return str
+    }
 }

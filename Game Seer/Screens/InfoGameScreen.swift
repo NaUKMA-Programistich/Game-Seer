@@ -16,6 +16,8 @@ struct InfoGameScreen: View {
             ScrollView {
                 GameView(game: game!)
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(LinearGradient(gradient: Gradient(colors: [Color.cyan, Color.green]), startPoint: .top, endPoint: .bottom))
         }
     }
 
@@ -25,27 +27,79 @@ struct InfoGameScreen: View {
             Image(uiImage: UIImage(data: image ?? Data()) ?? UIImage())
                 .resizable()
                 .scaledToFit()
+                .overlay(
+                    Rectangle()
+                    .stroke(Color.white, lineWidth: 4)
+                )
             HStack {
                 Text(game.name)
                 Spacer()
                 Text(game.percentage)
             }
-            .padding()
-            Text(game.description)
+            .foregroundColor(Color.black)
             Divider()
-        }
-        .padding([.horizontal], 8)
+            InfoBlock(title: "Description:", textInfo: game.description)
+            TitleText(text: "Supported platforms:")
+            ForEach(Array(game.platforms.keys), id: \.self ) { key in
+                if(game.platforms[key] == true){
+                    HStack{
+                        Text(key)
+                            .font(.body)
+                            .foregroundColor(Color.black)
+                        Spacer()
+                    }
+                }
+            }
+            Divider()
+            InfoBlock(title: "Supported languages:", textInfo: game.languages)
+            TitleText(text: "For more info visit:")
+            GameLinkView(linkName: "Steam store page", id: game.id)
+            
 
+        }
+        
+        .padding()
+
+    }
+    
+    @ViewBuilder
+    func InfoBlock(title: String, textInfo: String) -> some View{
+        TitleText(text: title)
+        Text(textInfo)
+            .font(.body)
+            .foregroundColor(Color.black)
+        Divider()
     }
 
     @ViewBuilder
     func LoadingView() -> some View {
         ProgressView()
     }
+    
+    @ViewBuilder
+    func GameLinkView(linkName: String, id:Int) -> some View{
+        HStack {
+            if let url = URL(string: "https://store.steampowered.com/app/\(id)") {
+                Link(linkName, destination: url)
+                    .font(.body)
+            }
+            Spacer()
+        }
+    }
+    
+    @ViewBuilder
+    func TitleText(text: String) -> some View{
+        HStack{
+            Text(text)
+                .font(.title2)
+                .foregroundColor(Color.black)
+            Spacer()
+        }
+    }
 
 
     private func processGames() {
-        service.processImage(image: image) { self.game = $0 }
+        service.processImage(image: image) {self.game = $0 }
     }
 }
 
