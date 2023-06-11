@@ -8,7 +8,14 @@ class GamesService {
     private var session = URLSession.shared
     private let decoder = JSONDecoder()
 
-    private let STEAM_URL = "https://store.steampowered.com/api/appdetails?appids="
+    private let steamUrl = "https://store.steampowered.com/api/appdetails?appids="
+
+    private var fixedMap: [String:String] = [:]
+
+    init() {
+        fixedMap.updateValue("271590", forKey: "362003")
+        fixedMap.updateValue("397540", forKey: "8950")
+    }
 
     func processImage(image: Data?, onResult: @escaping (Game) -> Void) {
         guard
@@ -17,32 +24,29 @@ class GamesService {
         else { return }
 
         coreML.process(image: uiImage) { [self] dict in
-            guard let result = dict.sorted(by: { $0.value > $1.value }).first else { return }
-            processML(data: result) { gameDto in
-                let game = Game(
-                    name: gameDto.name,
-                    id: gameDto.id,
-                    description: gameDto.description,
-                    percentage: String(result.value),
-                    platforms: gameDto.platforms,
-                    languages: gameDto.languages.withoutTags
-                )
-                print(game)
+            guard let result = dict
+                .sorted(by: { $0.value > $1.value })
+                .filter({ !$0.key.starts(with: "Lost Ark")  })
+                .first
+            else { return }
+            processML(data: result) { game in
                 onResult(game)
             }
         }
     }
 
     private func processML(data: (key: String, value: Float), onResult: @escaping (Game) -> Void) {
-        let gameID = data.key.split(separator: "||")[1]
-        getGameDetails(gameId: String(gameID)) { gameDTO in
+        let gameID = String(data.key.split(separator: "||")[1])
+        let fixedGameId = fixedMap[gameID] ?? gameID
+
+        getGameDetails(gameId: String(fixedGameId)) { gameDTO in
             let game = Game(
                 name: gameDTO.name,
                 id: gameDTO.id,
                 description: gameDTO.shortDescription,
                 percentage: String(data.value),
                 platforms: gameDTO.platforms,
-                languages: gameDTO.languages.withoutTags
+                languages: gameDTO.languagesWithoutTags
             )
             onResult(game)
         }
@@ -51,7 +55,7 @@ class GamesService {
 
 
     private func getGameDetails(gameId: String, onResult: @escaping (GameDto) -> Void) {
-        guard let url = URL(string: STEAM_URL + gameId + "&l=english") else {
+        guard let url = URL(string: steamUrl + gameId + "&l=english") else {
             print("Bad url")
             return
         }
@@ -80,13 +84,4 @@ class GamesService {
 
 extension String: LocalizedError {
     public var errorDescription: String? { return self }
-}
-
-extension String{
-    public var withoutTags: String{
-        let pattern = "<[^>]+>"
-        var str = self.filter{$0 != "*"}.replacingOccurrences(of: pattern, with: "", options: .regularExpression)
-        str = str.replacingOccurrences(of: "languages with full audio support", with: "")
-        return str
-    }
 }

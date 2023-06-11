@@ -55,13 +55,12 @@ struct ChooserGameScreen: View {
                 .resizable()
                 .scaledToFit()
                 .frame(width: 250, height: 250, alignment: .center)
-                
         }
             
     }
     
     @ViewBuilder
-    func ProgramLabel() -> some View{
+    func ProgramLabel() -> some View {
         Text("Game Seer")
             .font(.title)
             .bold()

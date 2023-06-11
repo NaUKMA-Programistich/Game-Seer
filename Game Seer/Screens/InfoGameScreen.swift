@@ -54,10 +54,7 @@ struct InfoGameScreen: View {
             InfoBlock(title: "Supported languages:", textInfo: game.languages)
             TitleText(text: "For more info visit:")
             GameLinkView(linkName: "Steam store page", id: game.id)
-            
-
         }
-        
         .padding()
 
     }

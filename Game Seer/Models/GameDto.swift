@@ -20,4 +20,11 @@ struct GameDto: Codable {
         self.platforms = platforms
         self.languages = languages
     }
+
+    var languagesWithoutTags: String {
+        let pattern = "<[^>]+>"
+        var str = languages.filter{$0 != "*"}.replacingOccurrences(of: pattern, with: "", options: .regularExpression)
+        str = str.replacingOccurrences(of: "languages with full audio support", with: "")
+        return str
+    }
 }
