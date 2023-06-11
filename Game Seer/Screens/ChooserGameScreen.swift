@@ -31,7 +31,7 @@ struct ChooserGameScreen: View {
         }
         .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(LinearGradient(gradient: Gradient(colors: [Color.cyan, Color.green]), startPoint: .top, endPoint: .bottom))
+        .background(Color(red: 235/255, green: 230/255, blue: 224/255))
         }
         
     }
@@ -44,7 +44,7 @@ struct ChooserGameScreen: View {
                 .scaledToFit()
                 .overlay(
                     Rectangle()
-                    .stroke(Color.white, lineWidth: 4)
+                    .stroke(Color.black, lineWidth: 4)
                 )
         }
         else {
@@ -52,6 +52,7 @@ struct ChooserGameScreen: View {
                 .resizable()
                 .scaledToFit()
                 .frame(width: 250, height: 250, alignment: .center)
+                .foregroundColor(Color.black)
         }
             
     }
@@ -62,7 +63,7 @@ struct ChooserGameScreen: View {
             .font(.title)
             .bold()
             .padding()
-            .foregroundColor(Color.white)
+            .foregroundColor(Color.black)
     }
     
     @ViewBuilder
@@ -73,9 +74,9 @@ struct ChooserGameScreen: View {
             Image(systemName: "photo")
             Text("Choose ")
         }
-        .foregroundColor(Color.white)
+        .foregroundColor(Color.black)
         .padding()
-        .background(Color.blue)
+        .background(Color.white)
         .cornerRadius(12)
         .sheet(isPresented: $shouldPresentPhotoPicker) {
             PhPickerView(sourceType: self.shouldPresentCamera ? .camera : .photoLibrary,
@@ -101,9 +102,9 @@ struct ChooserGameScreen: View {
             Image(systemName: "eye")
             Text("Predict")
         }
-        .foregroundColor(Color.white)
+        .foregroundColor(Color.black)
         .padding()
-        .background(Color.blue)
+        .background(Color.white)
         .opacity(chooserImage == nil ? 0.7 : 1)
         .disabled(chooserImage == nil)
         .cornerRadius(12)

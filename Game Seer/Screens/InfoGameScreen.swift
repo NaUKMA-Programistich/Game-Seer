@@ -17,13 +17,21 @@ struct InfoGameScreen: View {
                 GameView(game: game!)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(LinearGradient(gradient: Gradient(colors: [Color.cyan, Color.green]), startPoint: .top, endPoint: .bottom))
+            .background(Color(red: 235/255, green: 230/255, blue: 224/255))
         }
     }
 
     @ViewBuilder
     func GameView(game: Game) -> some View {
         VStack {
+            HStack{
+                Spacer()
+                Text(game.name)
+                    .font(.title)
+                    .bold()
+                    .foregroundColor(Color.black)
+                Spacer()
+            }
             Image(uiImage: UIImage(data: image ?? Data()) ?? UIImage())
                 .resizable()
                 .scaledToFit()
@@ -32,12 +40,13 @@ struct InfoGameScreen: View {
                     .stroke(Color.white, lineWidth: 4)
                 )
             HStack {
-                Text(game.name)
+                Text("Confidence percentage: \(game.percentage)")
+                    .font(.body)
                 Spacer()
-                Text(game.percentage)
+                
             }
             .foregroundColor(Color.black)
-            Divider()
+            DividerWithCustomVerticalPaddings(value: 8)
             InfoBlock(title: "Description:", textInfo: game.description)
             TitleText(text: "Supported platforms:")
             ForEach(Array(game.platforms.keys), id: \.self ) { key in
@@ -50,10 +59,9 @@ struct InfoGameScreen: View {
                     }
                 }
             }
-            Divider()
+            DividerWithCustomVerticalPaddings(value: 8)
             InfoBlock(title: "Supported languages:", textInfo: game.languages)
-            TitleText(text: "For more info visit:")
-            GameLinkView(linkName: "Steam store page", id: game.id)
+            GameLinkView(linkName: "For more info visit steam store page", id: game.id)
         }
         .padding()
 
@@ -69,13 +77,19 @@ struct InfoGameScreen: View {
                     .foregroundColor(Color.black)
                 Spacer()
             }
-            Divider()
+            DividerWithCustomVerticalPaddings(value: 8)
         }
     }
 
     @ViewBuilder
     func LoadingView() -> some View {
         ProgressView()
+    }
+    
+    @ViewBuilder
+    func DividerWithCustomVerticalPaddings(value: CGFloat) -> some View{
+        Divider()
+            .padding([.vertical], value)
     }
     
     @ViewBuilder
