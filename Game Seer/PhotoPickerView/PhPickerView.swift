@@ -14,8 +14,8 @@ struct PhPickerView: UIViewControllerRepresentable {
     @Binding var image: Data?
     @Binding var isPresented: Bool
     
-    func makeCoordinator() -> PhotoPickerViewCoordinator {
-        return PhotoPickerViewCoordinator(image: $image, isPresented: $isPresented)
+    func makeCoordinator() -> PhPickerViewCoordinator {
+        return PhPickerViewCoordinator(image: $image, isPresented: $isPresented)
     }
     
     func makeUIViewController(context: Context) -> UIImagePickerController {
@@ -30,7 +30,7 @@ struct PhPickerView: UIViewControllerRepresentable {
 
 }
 
-class PhotoPickerViewCoordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class PhPickerViewCoordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     @Binding var image: Data?
     @Binding var isPresented: Bool
@@ -50,6 +50,5 @@ class PhotoPickerViewCoordinator: NSObject, UINavigationControllerDelegate, UIIm
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         self.isPresented = false
     }
-    
 }
 

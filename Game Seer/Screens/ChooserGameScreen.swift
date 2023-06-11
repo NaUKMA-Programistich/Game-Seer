@@ -29,12 +29,6 @@ struct ChooserGameScreen: View {
                 Spacer()
             }
         }
-//        .onChange(of: pickedImage) { image in
-//            Task {
-//                guard let data = try? await pickedImage?.loadTransferable(type: Data.self) else { return }
-//                chooserImage = data
-//            }
-//        }
         .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(LinearGradient(gradient: Gradient(colors: [Color.cyan, Color.green]), startPoint: .top, endPoint: .bottom))
@@ -69,18 +63,6 @@ struct ChooserGameScreen: View {
             .bold()
             .padding()
             .foregroundColor(Color.white)
-    }
-    
-    
-    @ViewBuilder
-    func PhotoPickerView() -> some View {
-        PhotosPicker(selection: $pickedImage, matching: .images) {
-            Label("Choose ", systemImage: "photo")
-        }
-        .foregroundColor(Color.white)
-        .padding()
-        .background(Color.blue)
-        .cornerRadius(12)
     }
     
     @ViewBuilder
