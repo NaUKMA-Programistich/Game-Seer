@@ -61,11 +61,16 @@ struct InfoGameScreen: View {
     
     @ViewBuilder
     func InfoBlock(title: String, textInfo: String) -> some View{
-        TitleText(text: title)
-        Text(textInfo)
-            .font(.body)
-            .foregroundColor(Color.black)
-        Divider()
+        VStack{
+            TitleText(text: title)
+            HStack{
+                Text(textInfo)
+                    .font(.body)
+                    .foregroundColor(Color.black)
+                Spacer()
+            }
+            Divider()
+        }
     }
 
     @ViewBuilder

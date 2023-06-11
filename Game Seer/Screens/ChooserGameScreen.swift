@@ -5,6 +5,9 @@ struct ChooserGameScreen: View {
     @State private var pickedImage: PhotosPickerItem?
     @State private var chooserImage: Data?
     @State private var isGetInfoOpen: Bool = false
+    @State private var shouldPresentPhotoPicker = false
+    @State private var shouldPresentActionChooser = false
+    @State private var shouldPresentCamera = false
 
     var body: some View {
         NavigationStack{
@@ -17,7 +20,7 @@ struct ChooserGameScreen: View {
             Spacer()
             HStack {
                 Spacer()
-                PhotoPickerView()
+                PhotoPickerButton()
                 Spacer()
                 GetInfoButton()
                     .navigationDestination(isPresented: $isGetInfoOpen){
@@ -26,12 +29,12 @@ struct ChooserGameScreen: View {
                 Spacer()
             }
         }
-        .onChange(of: pickedImage) { image in
-            Task {
-                guard let data = try? await pickedImage?.loadTransferable(type: Data.self) else { return }
-                chooserImage = data
-            }
-        }
+//        .onChange(of: pickedImage) { image in
+//            Task {
+//                guard let data = try? await pickedImage?.loadTransferable(type: Data.self) else { return }
+//                chooserImage = data
+//            }
+//        }
         .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(LinearGradient(gradient: Gradient(colors: [Color.cyan, Color.green]), startPoint: .top, endPoint: .bottom))
@@ -79,6 +82,33 @@ struct ChooserGameScreen: View {
         .background(Color.blue)
         .cornerRadius(12)
     }
+    
+    @ViewBuilder
+    func PhotoPickerButton() -> some View{
+        Button{
+           shouldPresentActionChooser = true
+        }label: {
+            Image(systemName: "photo")
+            Text("Choose ")
+        }
+        .foregroundColor(Color.white)
+        .padding()
+        .background(Color.blue)
+        .cornerRadius(12)
+        .sheet(isPresented: $shouldPresentPhotoPicker) {
+            PhPickerView(sourceType: self.shouldPresentCamera ? .camera : .photoLibrary,
+                            image: self.$chooserImage,
+                            isPresented: self.$shouldPresentPhotoPicker)
+        }.actionSheet(isPresented: $shouldPresentActionChooser) { () -> ActionSheet in
+            ActionSheet(title: Text("Choose mode"), message: Text("Camera or library"), buttons: [ActionSheet.Button.default(Text("Camera"), action: {
+                self.shouldPresentPhotoPicker = true
+                self.shouldPresentCamera = true
+            }), ActionSheet.Button.default(Text("Photo Library"), action: {
+                self.shouldPresentPhotoPicker = true
+                self.shouldPresentCamera = false
+            }), ActionSheet.Button.cancel()])
+        }
+    }
 
     @ViewBuilder
     func GetInfoButton() -> some View {
@@ -92,8 +122,8 @@ struct ChooserGameScreen: View {
         .foregroundColor(Color.white)
         .padding()
         .background(Color.blue)
-        .opacity(pickedImage == nil ? 0.7 : 1)
-        .disabled(pickedImage == nil)
+        .opacity(chooserImage == nil ? 0.7 : 1)
+        .disabled(chooserImage == nil)
         .cornerRadius(12)
         
     }
