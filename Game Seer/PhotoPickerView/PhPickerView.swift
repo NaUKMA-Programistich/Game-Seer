@@ -42,7 +42,7 @@ class PhotoPickerViewCoordinator: NSObject, UINavigationControllerDelegate, UIIm
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            self.image = UIImage.pngData(image)()
+            self.image = UIImage.jpegData(image)(compressionQuality: 1.0)
         }
         self.isPresented = false
     }
