@@ -23,7 +23,70 @@ struct InfoGameScreen: View {
 
     @ViewBuilder
     func GameView(game: Game) -> some View {
-        VStack {
+        VStack(spacing: 0) {
+            Header(game: game)
+            
+            DividerWithCustomVerticalPaddings(value: 8)
+            
+            InfoBlock(title: "Description:", textInfo: game.description)
+            
+            ScreenshotList(game: game)
+             
+            DividerWithCustomVerticalPaddings(value: 8)
+            
+            InfoFieldsBody(game: game)
+        }
+        .padding()
+
+    }
+    
+    @ViewBuilder
+    func ScreenshotList(game: Game) -> some View{
+        TitleText(text: "Game screenshots:")
+        ScrollView(.horizontal){
+            LazyHStack{
+                ForEach(game.screenshots){screenshot in
+                    AsyncImage(url: URL(string: screenshot.pathThumbnail)) { phase in
+                        switch phase {
+                        case .empty:
+                            ProgressView()
+                        case .success(let image):
+                            image
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                        case .failure(let error):
+                            Text("Failed to load image: \(error.localizedDescription)")
+                        default:
+                            EmptyView()
+                        }
+                    }
+                    .frame(width: 256, height: 144)
+                }
+            }
+        }
+    }
+    
+    @ViewBuilder
+    func InfoFieldsBody(game: Game) -> some View{
+        TitleText(text: "Supported platforms:")
+        ForEach(Array(game.platforms.keys), id: \.self ) { key in
+            if(game.platforms[key] == true){
+                HStack{
+                    Text(key)
+                        .font(.body)
+                        .foregroundColor(Color.black)
+                    Spacer()
+                }
+            }
+        }
+        DividerWithCustomVerticalPaddings(value: 8)
+        InfoBlock(title: "Supported languages:", textInfo: game.languages)
+        GameLinkView(linkName: "For more info visit steam store page", id: game.id)
+    }
+    
+    @ViewBuilder
+    func Header(game: Game) -> some View{
+        VStack{
             HStack{
                 Spacer()
                 Text(game.name)
@@ -37,34 +100,16 @@ struct InfoGameScreen: View {
                 .scaledToFit()
                 .overlay(
                     Rectangle()
-                    .stroke(Color.white, lineWidth: 4)
+                        .stroke(Color.white, lineWidth: 4)
                 )
             HStack {
                 Text("Confidence percentage: \(game.percentage)")
                     .font(.body)
+                    .foregroundColor(Color.black)
                 Spacer()
                 
             }
-            .foregroundColor(Color.black)
-            DividerWithCustomVerticalPaddings(value: 8)
-            InfoBlock(title: "Description:", textInfo: game.description)
-            TitleText(text: "Supported platforms:")
-            ForEach(Array(game.platforms.keys), id: \.self ) { key in
-                if(game.platforms[key] == true){
-                    HStack{
-                        Text(key)
-                            .font(.body)
-                            .foregroundColor(Color.black)
-                        Spacer()
-                    }
-                }
-            }
-            DividerWithCustomVerticalPaddings(value: 8)
-            InfoBlock(title: "Supported languages:", textInfo: game.languages)
-            GameLinkView(linkName: "For more info visit steam store page", id: game.id)
         }
-        .padding()
-
     }
     
     @ViewBuilder

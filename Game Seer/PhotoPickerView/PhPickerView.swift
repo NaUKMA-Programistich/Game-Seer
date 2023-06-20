@@ -32,6 +32,7 @@ struct PhPickerView: UIViewControllerRepresentable {
 
 class PhPickerViewCoordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
+    
     @Binding var image: Data?
     @Binding var isPresented: Bool
     

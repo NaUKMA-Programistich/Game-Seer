@@ -7,4 +7,5 @@ struct Game: Codable {
     let percentage: String
     let platforms: [String: Bool]
     let languages: String
+    let screenshots: [Screenshot]
 }

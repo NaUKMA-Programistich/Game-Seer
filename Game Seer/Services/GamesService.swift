@@ -46,7 +46,8 @@ class GamesService {
                 description: gameDTO.shortDescription,
                 percentage: String(data.value),
                 platforms: gameDTO.platforms,
-                languages: gameDTO.languagesWithoutTags
+                languages: gameDTO.languagesWithoutTags,
+                screenshots: gameDTO.screenshots
             )
             onResult(game)
         }
